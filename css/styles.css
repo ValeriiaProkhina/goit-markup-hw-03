@@ -1,3 +1,26 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+ul,
+ol {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 body {
   color: #434455;
   background: #fff;
@@ -9,16 +32,57 @@ body {
   letter-spacing: 0.32px;
 }
 
-ul,
-ol {
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
   list-style-type: none;
 }
 
-a {
+.link {
   text-decoration: none;
 }
 
+.container {
+  width: 1158px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
 /* Header */
+
+.page-header {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--cornflower, #e7e9fc);
+  background: var(--white, #fff);
+}
+
+.page-header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.page-navigation-menu {
+  display: flex;
+  align-items: center;
+}
+
 .logo {
   color: #4d5ae5;
   font-family: 'Raleway', sans-serif;
@@ -29,9 +93,12 @@ a {
   text-transform: uppercase;
 }
 .part-logo-header {
+  margin-right: 76px;
   color: #2e2f42;
 }
-.navigation-menu {
+.navigation-menu-list {
+  display: flex;
+  column-gap: 40px;
   font-weight: 500;
 }
 
@@ -47,9 +114,13 @@ a {
 }
 
 .contacts {
+  align-items: center;
   font-style: normal;
 }
-
+.contacts-list {
+  display: flex;
+  column-gap: 40px;
+}
 .contacts-item {
   color: #434455;
   letter-spacing: 0.32px;
@@ -62,10 +133,18 @@ a {
 
 /* Section-Hero */
 .section-hero {
+  padding-top: 60;
+  padding-bottom: 60;
   background: #2e2f42;
 }
 
+.hero-container {
+  padding-top: 188px;
+  padding-bottom: 188px;
+}
+
 .title-hero {
+  margin-bottom: 48px;
   color: #ffffff;
   text-align: center;
   font-size: 56px;
@@ -75,6 +154,10 @@ a {
 }
 
 .button-hero {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px 32px;
   font-family: 'Roboto', sans-serif;
   cursor: pointer;
   font-size: 16px;
@@ -82,6 +165,8 @@ a {
   letter-spacing: 0.64px;
   line-height: 1.5;
   color: #ffffff;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
   background: var(--iris, #4d5ae5);
 }
 
@@ -91,11 +176,69 @@ a {
 }
 
 /* Sections */
+.section-solutions {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.section-our-team {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background: var(--cloud, #f4f4fd);
+}
+
+.section-our-portfolio {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.card-content-container {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+
+.solutions-list {
+  display: flex;
+  column-gap: 24px;
+}
+
+.our-team-list {
+  display: flex;
+  column-gap: 24px;
+}
+
+.our-portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 48px;
+}
+
+.portfolio-list-item {
+  border: 1px solid #e7e9fc;
+  background: #fff;
+  width: calc((100% - 48px) / 3);
+}
+
 .title-solutions {
   line-height: 1.2;
 }
 
+.list-item {
+  width: calc((100% - 72px) / 4);
+}
+
+.list-item-team {
+  margin-bottom: 120px;
+  background: var(--white, #fff);
+  box-shadow: 0px 2px 1px 0px rgba(46, 47, 66, 0.08),
+    0px 1px 1px 0px rgba(46, 47, 66, 0.16),
+    0px 1px 6px 0px rgba(46, 47, 66, 0.08);
+  line-height: 1.2;
+}
+
 .list-subheading {
+  margin-bottom: 8px;
   color: #2e2f42;
   font-size: 20px;
   font-weight: 500;
@@ -108,11 +251,12 @@ a {
   line-height: 1.5;
 }
 
-.section-our-team {
-  background: var(--cloud, #f4f4fd);
+.our-team-text {
+  text-align: center;
 }
 
 .list-subheading-team {
+  margin-bottom: 8px;
   text-align: center;
   color: #2e2f42;
   font-size: 20px;
@@ -121,12 +265,9 @@ a {
   letter-spacing: 0.4px;
 }
 
-.list-item-team {
-  background: var(--white, #fff);
-  line-height: 1.2;
-}
-
 .title-section {
+  padding-top: 120px;
+  margin-bottom: 72px;
   color: #2e2f42;
   font-size: 36px;
   font-weight: 700;
@@ -138,12 +279,20 @@ a {
 
 /* Footer */
 .footer {
+  padding-top: 60px;
   background-color: #2e2f42;
 }
+
+.footer-container {
+  padding: 101.5px 1020px 100px 156px;
+}
+
 .part-logo-footer {
   color: #f4f4fd;
   line-height: 1.17;
 }
 .text-footer {
+  margin-top: 17.5px;
+  width: 264px;
   color: #f4f4fd;
 }
